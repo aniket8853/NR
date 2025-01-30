@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>CSS Grid Implementation</title>
+    <style>
+        .grid-container{
+            display: grid;
+            grid-template-columns: 100px 100px ;
+            grid-template-rows: 100px 100px 100px;
+            background-color:black;
+            gap: 100px;
+            grid-template-areas: a,b,a ;
+        }
+        .grid-item{
+            display: flex;
+            background-color: aqua;
+            color: brown;
+            /* justify-content: left; */
+            align-items: center;
+            grid-area:a ;
+        }
+    </style>
+   
+</head>
+<body>
+    <div class ="grid-container">
+    <div class ="grid-item">akbadal></div>
+    <div class ="grid-item">akbadal></div>
+    <div class ="grid-item">akbadal></div>
+    <div class ="grid-item">akbadal></div>
+    <div class ="grid-item">akbadal></div>
+    <div class ="grid-item">akbadal></div>
+    
+   
+</body>
+</html>

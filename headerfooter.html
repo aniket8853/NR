@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar Example</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+    }
+
+    /* Sidebar Styles */
+    .sidebar {
+      height: 100vh;
+      width: 250px;
+      position: fixed;
+      top: 0;
+      left: -250px; /* Initially hidden */
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      transition: 0.3s;
+    }
+
+    .sidebar.active {
+      left: 0;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: white;
+      display: block;
+      margin: 15px 0;
+    }
+
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+
+    /* Content Styles */
+    .content {
+      margin-left: 0;
+      padding: 20px;
+      width: 100%;
+      transition: 0.3s;
+    }
+
+    .content.shifted {
+      margin-left: 250px;
+    }
+
+    /* Toggle Button */
+    .toggle-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 18px;
+      cursor: pointer;
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <h2>Sidebar Menu</h2>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="content" id="content">
+    <button class="toggle-btn" id="toggle-btn">☰ Toggle Sidebar</button>
+    <h1>Welcome!</h1>
+    <p>This is the main content area. Click the button to toggle the sidebar.</p>
+  </div>
+
+  <script>
+    // JavaScript for Sidebar Toggle
+    const sidebar = document.getElementById('sidebar');
+    const content = document.getElementById('content');
+    const toggleBtn = document.getElementById('toggle-btn');
+
+    toggleBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+      content.classList.toggle('shifted');
+    });
+  </script>
+</body>
+</html>
